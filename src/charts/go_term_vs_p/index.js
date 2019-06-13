@@ -19,7 +19,8 @@ class GoTerm_vs_P extends React.Component {
 			data: {
 				labels: chartData.labels,
 				datasets: chartData.datasets
-			}
+			},
+			options: chartData.options
 		});
 	}
 
