@@ -21,8 +21,10 @@ class RootContainer extends React.Component {
 	render() {
 		return (
 			<div className="rootContainer">
+				<span className="chart-title">Go Term vs P - value</span>
 				<GoTerm_vs_P data={this.state.data} />
 				<div className="margin"></div>
+				<span className="chart-title">Go Term vs Gene Count</span>
 				<GoTerm_vs_Count data={this.state.data} />
 			</div>
 		);

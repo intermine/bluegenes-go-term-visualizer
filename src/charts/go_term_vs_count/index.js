@@ -1,5 +1,6 @@
 import React from 'react';
 import Chart from 'chart.js';
+import Loading from '../../loading';
 import getChartData from './chartData';
 
 class GoTerm_vs_Count extends React.Component {
@@ -26,11 +27,10 @@ class GoTerm_vs_Count extends React.Component {
 
 	render() {
 		const { data } = this.props;
-		if (!data) return 'Loading';
+		if (!data) return <Loading />;
 
 		return (
 			<div>
-				<span className="chart-title">Go Term vs Gene Count</span>
 				<canvas ref={this.chart} />
 			</div>
 		);
