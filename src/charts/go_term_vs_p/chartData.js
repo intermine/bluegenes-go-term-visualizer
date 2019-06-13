@@ -1,6 +1,16 @@
 import { getColors } from '../colors';
 
 function getChartData(data) {
+	const axisLabel = text => [
+		{
+			scaleLabel: {
+				display: true,
+				labelString: text,
+				fontStyle: 'bold',
+				fontSize: 16
+			}
+		}
+	];
 	return {
 		labels: data.map(d => d.identifier),
 		datasets: [
@@ -12,6 +22,13 @@ function getChartData(data) {
 			}
 		],
 		options: {
+			legend: {
+				display: false
+			},
+			scales: {
+				yAxes: axisLabel('p - value'),
+				xAxes: axisLabel('GO Term')
+			},
 			hover: { animationDuration: 0 },
 			animation: {
 				onComplete: function() {
