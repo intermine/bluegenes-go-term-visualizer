@@ -17,4 +17,9 @@ describe('query', () => {
 			expect(res[0]['p-value']).not.toBeFalsy();
 		});
 	});
+
+	test('should return a rejected promise when data not available', () => {
+		const promise = queryData('SOME-FAKE-LIST-NAME', mockData.service, imjs);
+		return promise.catch(res => expect(res).toBe('No data found!'));
+	});
 });
