@@ -30,6 +30,7 @@ class GoTerm_vs_Count extends React.Component {
 
 		return (
 			<div>
+				<span className="chart-title">Go Term vs Gene Count</span>
 				<canvas ref={this.chart} />
 			</div>
 		);

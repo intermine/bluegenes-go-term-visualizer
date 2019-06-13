@@ -22,6 +22,7 @@ class RootContainer extends React.Component {
 		return (
 			<div className="rootContainer">
 				<GoTerm_vs_P data={this.state.data} />
+				<div className="margin"></div>
 				<GoTerm_vs_Count data={this.state.data} />
 			</div>
 		);

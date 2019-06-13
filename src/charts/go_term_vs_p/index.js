@@ -30,6 +30,7 @@ class GoTerm_vs_P extends React.Component {
 
 		return (
 			<div>
+				<span className="chart-title">Go Term vs P - value</span>
 				<canvas ref={this.chart} />
 			</div>
 		);
