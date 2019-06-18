@@ -1,5 +1,5 @@
 {
-  "name": "@intermine/bluegenes-GO-term-visualizer",
+  "name": "@intermine/bluegenes-go-term-visualizer",
   "version": "1.0.0",
   "main": "src/index.js",
   "description": "",
