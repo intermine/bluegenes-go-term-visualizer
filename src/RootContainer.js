@@ -13,12 +13,17 @@ class RootContainer extends React.Component {
 	}
 
 	componentDidMount() {
-		queryData(this.props.entity.value, this.props.serviceUrl).then(res => {
-			this.setState({ data: res });
-		});
+		queryData(this.props.entity.value, this.props.serviceUrl)
+			.then(res => {
+				this.setState({ data: res });
+			})
+			.catch(() => this.setState({ error: 'No Enrichment data found!' }));
 	}
 
 	render() {
+		if (this.state.error)
+			return <div className="rootContainer error">{this.state.error}</div>;
+
 		return (
 			<div className="rootContainer">
 				<span className="chart-title">Go Term vs P - value</span>
