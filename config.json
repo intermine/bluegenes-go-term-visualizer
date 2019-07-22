@@ -1,8 +1,6 @@
 {
-  "accepts": ["id"]  ,
-  "classes":
-    ["Gene"]
-  ,
+  "accepts": ["list"],
+  "classes": ["Gene"],
   "columnMapping": {
     "Gene": {
       "id": "primaryIdentifier"
