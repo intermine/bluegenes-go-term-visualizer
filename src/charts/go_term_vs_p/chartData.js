@@ -1,6 +1,7 @@
 import { getColors } from '../colors';
+import navigationQuery from '../../navigationQuery';
 
-function getChartData(data) {
+function getChartData(data, blueGenesNavigate) {
 	const axisLabel = text => [
 		{
 			scaleLabel: {
@@ -37,6 +38,11 @@ function getChartData(data) {
 						return data[tooltipItem[0].index].description;
 					}
 				}
+			},
+			onClick: (ev, barElem) => {
+				const index = barElem[0]._index;
+				const query = navigationQuery(data[index].identifier);
+				blueGenesNavigate('query', query);
 			},
 			hover: { animationDuration: 0 },
 			animation: {

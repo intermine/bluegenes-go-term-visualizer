@@ -67,6 +67,7 @@ class RootContainer extends React.Component {
 				/>
 				<span className="chart-title">Go Term vs P - value</span>
 				<GoTerm_vs_P
+					navigate={this.props.navigate}
 					data={this.state.data}
 					loading={this.state.loading}
 					error={this.state.error}
@@ -74,6 +75,7 @@ class RootContainer extends React.Component {
 				<div className="margin"></div>
 				<span className="chart-title">Go Term vs Gene Count</span>
 				<GoTerm_vs_Count
+					navigate={this.props.navigate}
 					data={this.state.data}
 					loading={this.state.loading}
 					error={this.state.error}
