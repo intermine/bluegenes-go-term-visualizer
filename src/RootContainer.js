@@ -1,5 +1,6 @@
 import React from 'react';
 import queryData from './query';
+import Controls from './Controls';
 import GoTerm_vs_P from './charts/go_term_vs_p';
 import GoTerm_vs_Count from './charts/go_term_vs_count';
 
@@ -26,6 +27,7 @@ class RootContainer extends React.Component {
 
 		return (
 			<div className="rootContainer">
+				<Controls />
 				<span className="chart-title">Go Term vs P - value</span>
 				<GoTerm_vs_P data={this.state.data} />
 				<div className="margin"></div>
