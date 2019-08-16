@@ -1,4 +1,4 @@
-function queryData(listName, serviceUrl, imjsClient = imjs) {
+function queryData(listName, serviceUrl, filterOptions, imjsClient = imjs) {
 	const service = new imjsClient.Service({
 		root: serviceUrl
 	});
@@ -7,8 +7,9 @@ function queryData(listName, serviceUrl, imjsClient = imjs) {
 			.enrichment({
 				list: listName,
 				widget: 'go_enrichment_for_gene',
-				maxp: 0.05,
-				filter: 'biological_process' // can also be cellular_component or molecular_function
+				maxp: filterOptions['maxp'],
+				filter: filterOptions['processFilter'], // can also be cellular_component or molecular_function
+				correction: filterOptions['correction']
 			})
 			.then(res => {
 				if (res.length === 0) reject('No data found!');
