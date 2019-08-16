@@ -11,6 +11,7 @@ function getChartData(data) {
 			}
 		}
 	];
+
 	return {
 		labels: data.map(
 			d => d.description.slice(0, 17) + (d.description.length > 17 ? '...' : '')
@@ -48,6 +49,14 @@ function getChartData(data) {
 				callbacks: {
 					title: function(tooltipItem) {
 						return data[tooltipItem[0].index].description;
+					},
+					label: function(tooltipItem) {
+						const item = data[tooltipItem.index];
+						const percentage = (
+							(item.matches / item.populationAnnotationCount) *
+							100
+						).toFixed(2);
+						return ` ${item.matches} (${percentage}%) : Identifier - ${item.identifier}`;
 					}
 				}
 			},
