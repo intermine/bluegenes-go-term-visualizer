@@ -15,19 +15,27 @@ class GoTerm_vs_P extends React.Component {
 
 		const chartData = getChartData(data);
 
-		new Chart(this.chart.current, {
-			type: 'bar',
-			data: {
-				labels: chartData.labels,
-				datasets: chartData.datasets
-			},
-			options: chartData.options
-		});
+		setTimeout(() => {
+			new Chart(this.chart.current, {
+				type: 'bar',
+				data: {
+					labels: chartData.labels,
+					datasets: chartData.datasets
+				},
+				options: chartData.options
+			});
+		}, 100);
+	}
+
+	shouldComponentUpdate(nextProps) {
+		if (this.props.loading !== nextProps.loading) return true;
+		if (this.props.data === nextProps.data) return false;
+		return true;
 	}
 
 	render() {
-		const { data } = this.props;
-		if (!data) return <Loading />;
+		const { data, loading } = this.props;
+		if (!data || loading) return <Loading />;
 
 		return (
 			<div>
