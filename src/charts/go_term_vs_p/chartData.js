@@ -12,7 +12,9 @@ function getChartData(data) {
 		}
 	];
 	return {
-		labels: data.map(d => d.identifier),
+		labels: data.map(
+			d => d.description.slice(0, 17) + (d.description.length > 17 ? '...' : '')
+		),
 		datasets: [
 			{
 				label: [],
@@ -28,6 +30,13 @@ function getChartData(data) {
 			scales: {
 				yAxes: axisLabel('p - value'),
 				xAxes: axisLabel('GO Term')
+			},
+			tooltips: {
+				callbacks: {
+					title: function(tooltipItem) {
+						return data[tooltipItem[0].index].description;
+					}
+				}
 			},
 			hover: { animationDuration: 0 },
 			animation: {
