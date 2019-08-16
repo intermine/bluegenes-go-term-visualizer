@@ -29,7 +29,7 @@ class RootContainer extends React.Component {
 	}
 
 	queryDataWithFilters() {
-		this.setState({ loading: true });
+		this.setState({ loading: true, error: null });
 		queryData(
 			this.props.entity.value,
 			this.props.serviceUrl,
@@ -39,7 +39,7 @@ class RootContainer extends React.Component {
 				this.setState({
 					data: res.slice(0, this.state.filterOptions.limitResults),
 					loading: false,
-					error: false
+					error: null
 				});
 			})
 			.catch(() => {
