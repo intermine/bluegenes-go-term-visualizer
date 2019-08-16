@@ -36,9 +36,15 @@ class RootContainer extends React.Component {
 			this.state.filterOptions
 		)
 			.then(res => {
-				this.setState({ data: res, loading: false });
+				this.setState({
+					data: res.slice(0, this.state.filterOptions.limitResults),
+					loading: false,
+					error: false
+				});
 			})
-			.catch(() => this.setState({ error: 'No Enrichment data found!' }));
+			.catch(() => {
+				this.setState({ error: 'No Enrichment data found!' });
+			});
 	}
 
 	updateFilters(ev) {
@@ -52,9 +58,6 @@ class RootContainer extends React.Component {
 	}
 
 	render() {
-		if (this.state.error)
-			return <div className="rootContainer error">{this.state.error}</div>;
-
 		return (
 			<div className="rootContainer">
 				<Controls
@@ -63,10 +66,18 @@ class RootContainer extends React.Component {
 					onApply={this.queryDataWithFilters}
 				/>
 				<span className="chart-title">Go Term vs P - value</span>
-				<GoTerm_vs_P data={this.state.data} loading={this.state.loading} />
+				<GoTerm_vs_P
+					data={this.state.data}
+					loading={this.state.loading}
+					error={this.state.error}
+				/>
 				<div className="margin"></div>
 				<span className="chart-title">Go Term vs Gene Count</span>
-				<GoTerm_vs_Count data={this.state.data} loading={this.state.loading} />
+				<GoTerm_vs_Count
+					data={this.state.data}
+					loading={this.state.loading}
+					error={this.state.error}
+				/>
 			</div>
 		);
 	}
