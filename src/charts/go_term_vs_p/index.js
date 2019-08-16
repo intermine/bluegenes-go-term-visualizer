@@ -9,8 +9,9 @@ class GoTerm_vs_P extends React.Component {
 		this.chart = React.createRef();
 	}
 
-	componentDidUpdate() {
+	componentDidUpdate(prevProps) {
 		const { data } = this.props;
+		if (data === prevProps.data) return; // don't re-render if data hasn't updated
 		if (!data) return;
 
 		const chartData = getChartData(data);
@@ -28,13 +29,15 @@ class GoTerm_vs_P extends React.Component {
 	}
 
 	shouldComponentUpdate(nextProps) {
+		if (this.props.error !== nextProps.error) return true;
 		if (this.props.loading !== nextProps.loading) return true;
 		if (this.props.data === nextProps.data) return false;
 		return true;
 	}
 
 	render() {
-		const { data, loading } = this.props;
+		const { data, loading, error } = this.props;
+		if (error) return <div className="rootContainer error">{error}</div>;
 		if (!data || loading) return <Loading />;
 
 		return (
