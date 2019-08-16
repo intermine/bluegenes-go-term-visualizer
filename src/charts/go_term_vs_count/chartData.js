@@ -17,8 +17,8 @@ function getChartData(data) {
 			{
 				label: [],
 				data: data.map(d => d.matches),
-				backgroundColor: getColors(0.9),
-				borderColor: getColors(0.3)
+				backgroundColor: getColors(0.9, data.length),
+				borderColor: getColors(0.3, data.length)
 			}
 		],
 		options: {
