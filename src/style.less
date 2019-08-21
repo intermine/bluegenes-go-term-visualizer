@@ -68,4 +68,65 @@
 		}
 	}
 
+
+	.filter-panel-root {
+		padding: 10px 0px;
+    border: 0.5px solid black;
+    border-radius: 10px;
+		background: #F9F9F9;
+		margin-bottom: 26px;
+
+		h4.filter-panel-title {
+			font-size: 22px;
+			font-family: sans-serif;
+			text-align: center;
+			margin: 0;
+			font-weight: 300;
+		}
+	
+		.filter-panel {
+			display: flex;
+			justify-content: space-evenly;
+			.filter-container {
+				padding: 8px;
+				p {
+					font-weight: 300;
+					padding: 0;
+					margin: 6px 0;
+					font-size: 18px;
+					font-family: arial;
+					color: black;
+					text-align: left;
+				}
+				select {
+					font-size: 16px;
+					border: 1px solid black;
+					text-align: center;
+				}
+				input {
+					border: 1px solid black;
+					padding: 4px;
+					font-size: 14px;
+					width: 100px;
+				}
+			}
+		}
+
+		button.apply-filters-button {
+			margin: auto;
+			display: block;
+			font-size: 16px;
+			padding: 8px 20px;
+			border-radius: 12px;
+		}
+	}
+
+	.error {
+		display: flex;
+		justify-content: center;
+		font-weight: 300;
+		font-size: 22px;
+		font-family: sans-serif;
+	}
+
 }

@@ -41,7 +41,8 @@
     	var elem = document.getElementById('yourDiv'),
     		//InterMine service, including URL and token.
     		imURL = {
-    			root: 'http://www.humanmine.org/human',
+    			// root: 'http://www.humanmine.org/human',
+					root: 'http://www.flymine.org/flymine/service'
     			//could include token here too if we had one
     		},
     		//this is an example of data that could be passed to this tool be BlueGenes
@@ -50,7 +51,10 @@
     		dataToInitialiseToolWith = {
 					"class" : "Gene",
 					"format" : "list",
-					"value" : "PL_obesityMonogen_ORahilly09"
+					"value" : "PL_obesityMonogen_ORahilly09",
+					// "value" : "PL_GenomicsEngland_GenePanel:Familial_Meniere_Disease", // 500 results
+					// "value": "PL_GenomicsEngland_GenePanel:Ocular_coloboma" // 22 results
+					"value" : "PL FlyTF_REDfly_TFs",
 				},
     		toolState = {}; //to be confirmed how we use this.
     	// THIS LINE IS THE IMPORTANT BIT. YOU SHOULDN'T NEED TO EDIT IT

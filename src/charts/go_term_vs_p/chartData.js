@@ -1,6 +1,7 @@
 import { getColors } from '../colors';
+import navigationQuery from '../../navigationQuery';
 
-function getChartData(data) {
+function getChartData(data, blueGenesNavigate) {
 	const axisLabel = text => [
 		{
 			scaleLabel: {
@@ -12,13 +13,15 @@ function getChartData(data) {
 		}
 	];
 	return {
-		labels: data.map(d => d.identifier),
+		labels: data.map(
+			d => d.description.slice(0, 17) + (d.description.length > 17 ? '...' : '')
+		),
 		datasets: [
 			{
 				label: [],
 				data: data.map(d => d['p-value']),
-				backgroundColor: getColors(0.9),
-				borderColor: getColors(0.3)
+				backgroundColor: getColors(0.9, data.length),
+				borderColor: getColors(0.3, data.length)
 			}
 		],
 		options: {
@@ -28,6 +31,18 @@ function getChartData(data) {
 			scales: {
 				yAxes: axisLabel('p - value'),
 				xAxes: axisLabel('GO Term')
+			},
+			tooltips: {
+				callbacks: {
+					title: function(tooltipItem) {
+						return data[tooltipItem[0].index].description;
+					}
+				}
+			},
+			onClick: (ev, barElem) => {
+				const index = barElem[0]._index;
+				const query = navigationQuery(data[index].identifier);
+				blueGenesNavigate('query', query);
 			},
 			hover: { animationDuration: 0 },
 			animation: {

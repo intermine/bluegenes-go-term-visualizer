@@ -6,8 +6,22 @@ describe('query', () => {
 		service: 'http://www.humanmine.org/human',
 		entity: { value: 'PL_obesityMonogen_ORahilly09' }
 	};
+
+	const filterOptions = {
+		// filter object with default values set
+		maxp: 0.05,
+		processFilter: 'biological_process',
+		correction: 'Holm-Bonferroni',
+		limitResults: 20
+	};
+
 	test('should return a promise resolving with correct data', () => {
-		const promise = queryData(mockData.entity.value, mockData.service, imjs);
+		const promise = queryData(
+			mockData.entity.value,
+			mockData.service,
+			filterOptions,
+			imjs
+		);
 
 		expect(promise).resolves.toBeInstanceOf(Array);
 		return promise.then(res => {
@@ -19,7 +33,12 @@ describe('query', () => {
 	});
 
 	test('should return a rejected promise when data not available', () => {
-		const promise = queryData('SOME-FAKE-LIST-NAME', mockData.service, imjs);
+		const promise = queryData(
+			'SOME-FAKE-LIST-NAME',
+			mockData.service,
+			filterOptions,
+			imjs
+		);
 		return promise.catch(res => expect(res).toBe('No data found!'));
 	});
 });
