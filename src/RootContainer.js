@@ -1,6 +1,6 @@
 import React from 'react';
 import queryData from './query';
-import Controls from './Controls';
+import Controls from './controls';
 import GoTerm_vs_P from './charts/go_term_vs_p';
 import GoTerm_vs_Count from './charts/go_term_vs_count';
 

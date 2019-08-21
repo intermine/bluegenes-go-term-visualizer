@@ -1,3 +1,4 @@
+import Chart from 'chart.js';
 import { getColors } from '../colors';
 import navigationQuery from '../../navigationQuery';
 
@@ -39,7 +40,7 @@ function getChartData(data, blueGenesNavigate) {
 							fontSize: 16
 						},
 						ticks: {
-							max: Math.max(...data.map(d => d.matches)) + 1,
+							suggestedMax: Math.max(...data.map(d => d.matches)) + 10,
 							beginAtZero: true
 						}
 					}
@@ -72,17 +73,22 @@ function getChartData(data, blueGenesNavigate) {
 					const chartInstance = this.chart;
 					const ctx = chartInstance.ctx;
 
-					// ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+					ctx.font = Chart.helpers.fontString(
+						10,
+						Chart.defaults.global.defaultFontStyle,
+						Chart.defaults.global.defaultFontFamily
+					);
 					ctx.textAlign = 'center';
 					ctx.textBaseline = 'bottom';
 
 					const meta = chartInstance.controller.getDatasetMeta(0);
 					meta.data.forEach(function(bar, index) {
-						ctx.fillText(
-							data[index].populationAnnotationCount,
-							bar._model.x,
-							bar._model.y - 5
+						const item = data[index];
+						const percentage = Math.round(
+							(item.matches / item.populationAnnotationCount) * 100
 						);
+						const topLabel = `${item.matches} (${percentage}%)`;
+						ctx.fillText(topLabel, bar._model.x, bar._model.y - 5);
 					});
 				}
 			}
