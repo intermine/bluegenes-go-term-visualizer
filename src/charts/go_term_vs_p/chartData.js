@@ -1,7 +1,7 @@
 import { getColors } from '../colors';
 import navigationQuery from '../../navigationQuery';
 
-function getChartData(data, blueGenesNavigate) {
+function getChartData(data, blueGenesNavigate, listName) {
 	const axisLabel = text => [
 		{
 			scaleLabel: {
@@ -41,7 +41,7 @@ function getChartData(data, blueGenesNavigate) {
 			},
 			onClick: (ev, barElem) => {
 				const index = barElem[0]._index;
-				const query = navigationQuery(data[index].identifier);
+				const query = navigationQuery(data[index].identifier, listName);
 				blueGenesNavigate('query', query);
 			},
 			hover: { animationDuration: 0 },

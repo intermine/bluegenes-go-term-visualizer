@@ -10,11 +10,11 @@ class GoTerm_vs_P extends React.Component {
 	}
 
 	componentDidUpdate(prevProps) {
-		const { data } = this.props;
+		const { data, navigate, listName } = this.props;
 		if (data === prevProps.data) return; // don't re-render if data hasn't updated
 		if (!data) return;
 
-		const chartData = getChartData(data);
+		const chartData = getChartData(data, navigate, listName);
 
 		setTimeout(() => {
 			new Chart(this.chart.current, {
