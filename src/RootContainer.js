@@ -1,7 +1,6 @@
 import React from 'react';
 import queryData from './query';
 import Controls from './controls';
-import GoTerm_vs_P from './charts/go_term_vs_p';
 import GoTerm_vs_Count from './charts/go_term_vs_count';
 
 class RootContainer extends React.Component {
@@ -65,15 +64,6 @@ class RootContainer extends React.Component {
 					filters={this.state.filterOptions}
 					onApply={this.queryDataWithFilters}
 				/>
-				<span className="chart-title">Go Term vs P - value</span>
-				<GoTerm_vs_P
-					listName={this.props.entity.value}
-					navigate={this.props.navigate}
-					data={this.state.data}
-					loading={this.state.loading}
-					error={this.state.error}
-				/>
-				<div className="margin"></div>
 				<span className="chart-title">Go Term vs Gene Count</span>
 				<GoTerm_vs_Count
 					listName={this.props.entity.value}
