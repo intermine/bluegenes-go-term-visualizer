@@ -1,9 +1,7 @@
 #  BlueGenes GO-term Visualizer
 
 BlueGenes GO-term Visualizer is a tool made for [BlueGenes](http://bluegenes.apps.intermine.org) following BlueGenes Tool API.
-There are two plots (visualizations) under this tool:
-1. GO Term vs P_value
-2. GO Term vs Gene Count
+Visualize gene ontology terms by their amount of matches for items in a list. Allows you to filter and adjust the enrichment results.
 
 ## Licence
 

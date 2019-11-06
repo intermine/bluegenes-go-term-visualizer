@@ -1,8 +1,8 @@
 {
   "name": "@intermine/bluegenes-go-term-visualizer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "src/index.js",
-  "description": "",
+  "description": "Visualize gene ontology terms by their amount of matches for items in a list. Allows you to filter and adjust the enrichment results.",
   "homepage": "http://www.intermine.org",
   "scripts": {
     "test": "jest",
