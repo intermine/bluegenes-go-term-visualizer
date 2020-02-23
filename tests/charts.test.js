@@ -9,14 +9,14 @@ describe('charts', () => {
 	beforeAll(() => {
 		return queryData(
 			'PL_obesityMonogen_ORahilly09',
-			'http://www.humanmine.org/human',
+			'https://www.humanmine.org/humanmine',
 			imjs
 		).then(res => (data = res));
 	});
 
-	test('go_term_vs_count renders canvas', () => {	
-		const el = document.createElement('div');	
-		ReactDOM.render(<GoTerm_vs_Count data={data} />, el);	
-		expect(el.innerHTML).toContain('canvas');	
+	test('go_term_vs_count renders canvas', () => {
+		const el = document.createElement('div');
+		ReactDOM.render(<GoTerm_vs_Count data={data} />, el);
+		expect(el.innerHTML).toContain('canvas');
 	});
 });

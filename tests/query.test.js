@@ -3,7 +3,7 @@ import queryData from '../src/query';
 
 describe('query', () => {
 	const mockData = {
-		service: 'http://www.humanmine.org/human',
+		service: 'https://www.humanmine.org/humanmine',
 		entity: { value: 'PL_obesityMonogen_ORahilly09' }
 	};
 

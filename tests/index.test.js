@@ -12,7 +12,7 @@ describe('main', () => {
 	test('should render something (atleast a loading) when initialised', () => {
 		const mockData = {
 			el: document.createElement('div'),
-			service: { root: 'http://www.humanmine.org/human' },
+			service: { root: 'https://www.humanmine.org/humanmine' },
 			state: { testing: true },
 			entity: { value: 'PL_obesityMonogen_ORahilly09' },
 			config: {}
