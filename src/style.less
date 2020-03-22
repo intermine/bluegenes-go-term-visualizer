@@ -13,6 +13,7 @@
 	.rootContainer {
 		border: 1px solid black;
 		padding: 20px;
+		margin-left: 105px;
 	}
 
 	.chart-title {
@@ -40,7 +41,7 @@
 			align-items: center;
 			justify-content: space-between;
 		}
-		
+
 		.balls div {
 			width: 0.8em;
 			height: 0.8em;
@@ -49,15 +50,15 @@
 			transform: translateY(-100%);
 			animation: wave 0.8s ease-in-out alternate infinite;
 		}
-		
+
 		.balls div:nth-of-type(1) {
 			animation-delay: -0.4s;
 		}
-		
+
 		.balls div:nth-of-type(2) {
 			animation-delay: -0.2s;
 		}
-		
+
 		@keyframes wave {
 			from {
 				transform: translateY(-100%);
@@ -73,7 +74,7 @@
 		padding: 10px 0px;
     border: 0.5px solid black;
     border-radius: 10px;
-		background: #F9F9F9;
+		background: #291313;
 		margin-bottom: 26px;
 
 		h4.filter-panel-title {
@@ -82,8 +83,9 @@
 			text-align: center;
 			margin: 0;
 			font-weight: 300;
+			color:white;
 		}
-	
+
 		.filter-panel {
 			display: flex;
 			justify-content: space-evenly;
@@ -95,19 +97,21 @@
 					margin: 6px 0;
 					font-size: 18px;
 					font-family: arial;
-					color: black;
+					color: white;
 					text-align: left;
 				}
 				select {
 					font-size: 16px;
 					border: 1px solid black;
+					border-radius: 5px;
 					text-align: center;
 				}
 				input {
 					border: 1px solid black;
+					border-radius: 5px;
 					padding: 4px;
 					font-size: 14px;
-					width: 100px;
+					width: 65px;
 				}
 			}
 		}
@@ -118,6 +122,11 @@
 			font-size: 16px;
 			padding: 8px 20px;
 			border-radius: 12px;
+			cursor:pointer;
+			}
+		button.apply-filters-button:hover {
+			background-color: #3D9970;
+			color:black;
 		}
 	}
 
