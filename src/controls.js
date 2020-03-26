@@ -55,7 +55,7 @@ class FilterPanel extends React.Component {
 					</div>
 				</div>
 				<button className="apply-filters-button" onClick={onApply}>
-					Apply Filters
+					Apply
 				</button>
 			</div>
 		);
