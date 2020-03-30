@@ -40,7 +40,7 @@
 			align-items: center;
 			justify-content: space-between;
 		}
-		
+
 		.balls div {
 			width: 0.8em;
 			height: 0.8em;
@@ -49,15 +49,15 @@
 			transform: translateY(-100%);
 			animation: wave 0.8s ease-in-out alternate infinite;
 		}
-		
+
 		.balls div:nth-of-type(1) {
 			animation-delay: -0.4s;
 		}
-		
+
 		.balls div:nth-of-type(2) {
 			animation-delay: -0.2s;
 		}
-		
+
 		@keyframes wave {
 			from {
 				transform: translateY(-100%);
@@ -83,31 +83,35 @@
 			margin: 0;
 			font-weight: 300;
 		}
-	
+
 		.filter-panel {
 			display: flex;
 			justify-content: space-evenly;
 			.filter-container {
 				padding: 8px;
 				p {
+					display:inline;
 					font-weight: 300;
 					padding: 0;
 					margin: 6px 0;
 					font-size: 18px;
 					font-family: arial;
-					color: black;
 					text-align: left;
 				}
 				select {
+					display:inline;
 					font-size: 16px;
 					border: 1px solid black;
+					border-radius: 5px;
 					text-align: center;
 				}
 				input {
+					display:inline;
 					border: 1px solid black;
+					border-radius: 5px;
 					padding: 4px;
 					font-size: 14px;
-					width: 100px;
+					width: 45px;
 				}
 			}
 		}
@@ -118,7 +122,8 @@
 			font-size: 16px;
 			padding: 8px 20px;
 			border-radius: 12px;
-		}
+			cursor:pointer;
+			}
 	}
 
 	.error {

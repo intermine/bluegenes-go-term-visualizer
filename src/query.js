@@ -1,3 +1,6 @@
+import imjs from 'imjs';
+
+
 function queryData(listName, serviceUrl, filterOptions, imjsClient = imjs) {
 	const service = new imjsClient.Service({
 		root: serviceUrl
