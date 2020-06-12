@@ -1,4 +1,5 @@
 const main = require('../src').main;
+import { ids } from './mockData';
 
 // Example
 describe('main', () => {
@@ -14,7 +15,7 @@ describe('main', () => {
 			el: document.createElement('div'),
 			service: { root: 'https://www.humanmine.org/humanmine' },
 			state: { testing: true },
-			entity: { value: 'PL_obesityMonogen_ORahilly09' },
+			entity: { value: ids },
 			config: {}
 		};
 		expect(() => {

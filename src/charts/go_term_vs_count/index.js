@@ -10,11 +10,11 @@ class GoTerm_vs_Count extends React.Component {
 	}
 
 	componentDidUpdate(prevProps) {
-		const { data, navigate, listName } = this.props;
+		const { data, navigate, geneIds } = this.props;
 		if (data === prevProps.data) return; // don't re-render if data hasn't updated
 		if (!data) return;
 
-		const chartData = getChartData(data, navigate, listName);
+		const chartData = getChartData(data, navigate, geneIds);
 
 		setTimeout(() => {
 			new Chart(this.chart.current, {

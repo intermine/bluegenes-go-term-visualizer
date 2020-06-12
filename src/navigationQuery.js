@@ -1,4 +1,4 @@
-export default (goTermCode, geneListName) => ({
+export default (goTermCode, geneIds) => ({
 	model: {
 		name: 'genomic'
 	},
@@ -14,9 +14,9 @@ export default (goTermCode, geneListName) => ({
 	],
 	where: [
 		{
-			path: 'Gene',
-			op: 'IN',
-			value: geneListName, // <-- your list name
+			path: 'Gene.id',
+			op: 'ONE OF',
+			values: geneIds, // <-- IDs passed with entity
 			code: 'A'
 		},
 		{

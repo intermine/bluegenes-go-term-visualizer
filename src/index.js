@@ -11,7 +11,7 @@ function main(el, service, imEntity, state, config, navigate) {
 	ReactDOM.render(
 		<RootContainer
 			serviceUrl={service.root}
-			entity={imEntity}
+			entity={imEntity.Gene}
 			config={config}
 			testing={state.testing}
 			navigate={navigate}
