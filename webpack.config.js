@@ -7,7 +7,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    library: "bluegenes_GO_term_visualizer",
+    library: "bluegenesGoTermVisualizer",
     libraryTarget: "var"
   },
   optimization: {
