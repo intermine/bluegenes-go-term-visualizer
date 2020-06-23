@@ -1,14 +1,13 @@
 import imjs from 'imjs';
 
-
-function queryData(listName, serviceUrl, filterOptions, imjsClient = imjs) {
+function queryData(geneIds, serviceUrl, filterOptions, imjsClient = imjs) {
 	const service = new imjsClient.Service({
 		root: serviceUrl
 	});
 	return new Promise((resolve, reject) => {
 		service
 			.enrichment({
-				list: listName,
+				ids: geneIds,
 				widget: 'go_enrichment_for_gene',
 				maxp: filterOptions['maxp'],
 				filter: filterOptions['processFilter'], // can also be cellular_component or molecular_function

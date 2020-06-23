@@ -1,18 +1,11 @@
 import imjs from 'imjs';
 import queryData from '../src/query';
+import { ids, filterOptions } from './mockData';
 
 describe('query', () => {
 	const mockData = {
 		service: 'https://www.humanmine.org/humanmine',
-		entity: { value: 'PL_obesityMonogen_ORahilly09' }
-	};
-
-	const filterOptions = {
-		// filter object with default values set
-		maxp: 0.05,
-		processFilter: 'biological_process',
-		correction: 'Holm-Bonferroni',
-		limitResults: 20
+		entity: { value: ids }
 	};
 
 	test('should return a promise resolving with correct data', () => {
@@ -33,12 +26,7 @@ describe('query', () => {
 	});
 
 	test('should return a rejected promise when data not available', () => {
-		const promise = queryData(
-			'SOME-FAKE-LIST-NAME',
-			mockData.service,
-			filterOptions,
-			imjs
-		);
+		const promise = queryData([-1], mockData.service, filterOptions, imjs);
 		return promise.catch(res => expect(res).toBe('No data found!'));
 	});
 });

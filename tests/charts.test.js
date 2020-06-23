@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import imjs from 'imjs';
 import GoTerm_vs_Count from '../src/charts/go_term_vs_count';
 import queryData from '../src/query';
+import { ids, filterOptions } from './mockData';
 
 describe('charts', () => {
 	let data = [];
 	beforeAll(() => {
 		return queryData(
-			'PL_obesityMonogen_ORahilly09',
+			ids,
 			'https://www.humanmine.org/humanmine',
+			filterOptions,
 			imjs
 		).then(res => (data = res));
 	});

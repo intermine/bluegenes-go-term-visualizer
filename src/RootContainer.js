@@ -66,7 +66,7 @@ class RootContainer extends React.Component {
 				/>
 				<span className="chart-title">Go Term vs Gene Count</span>
 				<GoTerm_vs_Count
-					listName={this.props.entity.value}
+					geneIds={this.props.entity.value}
 					navigate={this.props.navigate}
 					data={this.state.data}
 					loading={this.state.loading}
