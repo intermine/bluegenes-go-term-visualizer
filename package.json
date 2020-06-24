@@ -6,7 +6,7 @@
   "homepage": "http://www.intermine.org",
   "repository": {
     "type": "git",
-    "url": "https://github.com/intermine/bluegenes-GO-term-visualizer"
+    "url": "https://github.com/intermine/bluegenes-go-term-visualizer"
   },
   "scripts": {
     "test": "jest",
