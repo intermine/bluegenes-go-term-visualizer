@@ -10,7 +10,7 @@ describe('charts', () => {
 	beforeAll(() => {
 		return queryData(
 			ids,
-			'https://www.humanmine.org/humanmine',
+			'https://www.flymine.org/flymine',
 			filterOptions,
 			imjs
 		).then(res => (data = res));
