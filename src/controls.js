@@ -8,7 +8,7 @@ class FilterPanel extends React.Component {
 				<h4 className="filter-panel-title">Filter Panel</h4>
 				<div className="filter-panel">
 					<div className="filter-container">
-						<p>Text Correction:</p>
+						<p>Test Correction:</p>
 						<select
 							name="correction"
 							value={filters['correction']}
