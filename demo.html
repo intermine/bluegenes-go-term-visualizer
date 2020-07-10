@@ -38,7 +38,7 @@
 </head>
 
 <body>
-  <div class="bluegenes_GO_term_visualizer" id='yourDiv' />
+  <div class="bluegenesGoTermVisualizer" id='yourDiv' />
   <script>
     window.onload = function() {
 	    //The element to attach the viewer to. Must be an existing DOM element
@@ -66,7 +66,7 @@
     	// THIS LINE IS THE IMPORTANT BIT. YOU SHOULDN'T NEED TO EDIT IT
     	// the method signature should match the signature in src/index.js
     	$.ajax('config.json').then(function(config) {
-    		bluegenes_GO_term_visualizer.main(
+    		bluegenesGoTermVisualizer.main(
     			elem,
           imURL,
           dataToInitialiseToolWith,

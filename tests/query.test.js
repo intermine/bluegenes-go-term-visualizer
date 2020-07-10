@@ -4,7 +4,7 @@ import { ids, filterOptions } from './mockData';
 
 describe('query', () => {
 	const mockData = {
-		service: 'https://www.humanmine.org/humanmine',
+		service: 'https://www.flymine.org/flymine',
 		entity: { value: ids }
 	};
 
